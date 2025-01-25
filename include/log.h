@@ -21,7 +21,8 @@ class Log
         FILE *fp = nullptr;
 
     private:
-        Log(){
+        Log()
+        {
             std::cout << "Singleton Logging File object created" << std::endl;
         };
         void flush();
