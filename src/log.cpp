@@ -16,11 +16,11 @@ void Log::init(std::string file)
     std::cout << "Opened file: " << m_fileName << " for logging." << "\n";
 }
 
-void Log::logStmt(const char* content)
+void Log::logStmt(const char* stmt)
 {
     
     std::lock_guard<std::mutex> lock(m_mutex);
-    fprintf(fp,"%s",content); //treating the string as argument to avoid this 
+    fprintf(fp,"%s",stmt); //treating the string as argument to avoid this 
     
 }
 

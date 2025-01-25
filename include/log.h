@@ -11,7 +11,7 @@ class Log
     public:
         Log& operator= (const Log&) = delete;
         void init(std::string file);
-        void logStmt(const char* content);
+        void logStmt(const char* stmt);
         void endLogging(std::string closeStmt);
     
         static std::shared_ptr<Log> getInstance();
