@@ -6,6 +6,8 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/src
 )
 
+add_compile_options("-ggdb;-O3;-Wall")
+
 file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/include/*.h"
         "${PROJECT_SOURCE_DIR}/include/*.hpp"
@@ -22,7 +24,7 @@ find_package(Threads REQUIRED)
 
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
-add_executable(logFile ${all_SRCS})
+add_executable(logFile main.cpp ${all_SRCS})
 
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
